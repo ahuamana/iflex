@@ -1,0 +1,28 @@
+---
+import Section from './Section.astro';
+---
+
+<Section
+  title="How IFLEX Works"
+  description="Take a photo, get analyzed, and receive personalized recommendations to improve your posture."
+  id="solution"
+>
+  <img 
+    src="https://images.unsplash.com/photo-1633613286991-611fe299c4be?auto=format&fit=crop&q=80&w=1200" 
+    alt="AI analyzing posture" 
+    class="section-image" 
+    loading="lazy"
+    onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x800?text=AI+Analysis+Image'"
+  >
+</Section>
+
+<style>
+  .section-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+</style>
