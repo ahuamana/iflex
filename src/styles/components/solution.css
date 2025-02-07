@@ -1,15 +1,13 @@
 .solution-timeline {
   position: relative;
   width: 100%;
+  max-width: 1200px;
   margin: 4rem auto;
   padding: 2rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  align-items: start;
 }
 
 .solution-timeline::-webkit-scrollbar {
@@ -29,12 +27,9 @@
 }
 
 .timeline-step {
-  flex: 0 0 auto;
-  width: 80%;
-  max-width: 550px;
-  scroll-snap-align: center;
+  width: 100%;
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateY(30px);
   transition: all 0.4s ease-out;
 }
 
