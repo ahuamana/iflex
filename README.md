@@ -1,34 +1,44 @@
-# Astro Starter Kit: Basics
+# IFLEX - Intelligent Fitness Learning Experience
 
-```sh
-npm create astro@latest -- --template basics
-```
+![IFLEX Demo](https://s3.ezgif.com/tmp/ezgif-3c4e5dcf4cd83.gif)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+IFLEX is a modern web application built with Astro that provides personalized fitness learning experiences through AI-powered analysis and recommendations.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Features
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **AI-Powered Analysis**: Advanced analysis of fitness patterns and performance
+- **Personalized Recommendations**: Tailored workout and nutrition suggestions
+- **Real-time Feedback**: Immediate insights for workout improvements
+- **Multi-language Support**: Available in English and Spanish
+- **Responsive Design**: Seamless experience across all devices
+- **Theme Toggle**: Light and dark mode support
+
+## 🛠️ Tech Stack
+
+- [Astro](https://astro.build) - Static Site Generator
+- [TypeScript](https://www.typescriptlang.org/) - Type Safety
+- [Nanostores](https://github.com/nanostores/nanostores) - State Management
 
 ## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
 ├── public/
-│   └── favicon.svg
+│   ├── favicon.svg
+│   ├── i18n/          # Internationalization files
+│   ├── scripts/       # Client-side scripts
+│   └── styles/        # Global and component styles
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── assets/        # Static assets
+│   ├── components/    # UI components
+│   ├── i18n/          # Translation utilities
+│   ├── layouts/       # Page layouts
+│   ├── pages/         # Route components
+│   ├── scripts/       # Application logic
+│   ├── stores/        # State management
+│   └── styles/        # Component styles
 └── package.json
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
 ## 🧞 Commands
 
@@ -41,8 +51,24 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 🚀 Getting Started
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:4321](http://localhost:4321) in your browser
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
