@@ -41,6 +41,10 @@
   },
   "problem": {
     "title": "The Hidden Cause of Back Pain: Poor Posture",
+    "imageComparison": {
+      "poorPosture": "Poor Posture",
+      "goodPosture": "Good Posture"
+    },
     "description": "80% of office workers experience back pain due to prolonged sitting and bad posture. IFLEX is here to help.",
     "stats": {
       "officeWorkers": {

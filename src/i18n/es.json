@@ -41,6 +41,10 @@
   },
   "problem": {
     "title": "La causa oculta del dolor de espalda: mala postura",
+    "imageComparison": {
+      "poorPosture": "Mala Postura",
+      "goodPosture": "Buena Postura"
+    },
     "description": "El 80% de los trabajadores de oficina experimentan dolor de espalda debido a la postura prolongada y mala. IFLEX está aquí para ayudar.",
     "stats": {
       "officeWorkers": {
