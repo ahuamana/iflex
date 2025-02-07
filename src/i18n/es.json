@@ -83,7 +83,19 @@
   },
   "solution": {
     "title": "Cómo funciona IFLEX",
-    "description": "Toma una foto, obtén un análisis y recibe recomendaciones personalizadas para mejorar tu postura."
+    "description": "Toma una foto, obtén un análisis y recibe recomendaciones personalizadas para mejorar tu postura.",
+    "realtime": {
+      "title": "Análisis en Tiempo Real",
+      "description": "Nuestra tecnología de IA analiza tu postura en tiempo real, proporcionando retroalimentación instantánea."
+    },
+    "feedback": {
+      "title": "Retroalimentación Inteligente",
+      "description": "Obtén recomendaciones personalizadas y consejos para mejorar tus hábitos al sentarse."
+    },
+    "improvement": {
+      "title": "Seguimiento del Progreso",
+      "description": "Monitorea tu mejora a lo largo del tiempo y observa los cambios positivos en tu postura."
+    }
   },
   "features": {
     "title": "Características principales",

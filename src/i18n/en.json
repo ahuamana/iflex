@@ -83,7 +83,19 @@
   },
   "solution": {
     "title": "How IFLEX Works",
-    "description": "Take a photo, get analyzed, and receive personalized recommendations to improve your posture."
+    "description": "Take a photo, get analyzed, and receive personalized recommendations to improve your posture.",
+    "realtime": {
+      "title": "Real-Time Analysis",
+      "description": "Our AI technology analyzes your posture in real-time, providing instant feedback."
+    },
+    "feedback": {
+      "title": "Smart Feedback",
+      "description": "Get personalized recommendations and tips to improve your sitting habits."
+    },
+    "improvement": {
+      "title": "Track Progress",
+      "description": "Monitor your improvement over time and see the positive changes in your posture."
+    }
   },
   "features": {
     "title": "Key Features",

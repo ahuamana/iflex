@@ -1,13 +1,29 @@
 .timeline {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  overflow-x: auto;
+  gap: 3rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem 2rem;
   position: relative;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: flex-start;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+  -ms-overflow-style: none;
+}
+
+.timeline::-webkit-scrollbar {
+  height: 6px;
+}
+
+.timeline::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 6px;
 }
 
 .timeline::before {
@@ -16,21 +32,23 @@
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--primary-color), transparent);
-  opacity: 0.3;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--primary-color) 20%, var(--secondary-color) 80%, transparent);
+  opacity: 0.4;
+  filter: blur(1px);
 }
 
 .timeline-step {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   opacity: 0;
   transform: translateX(30px);
-  animation: fadeInRight 0.8s ease forwards;
-  flex: 1;
-  max-width: 350px;
+  animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  flex: 0 0 auto;
+  width: 350px;
+  perspective: 1000px;
 }
 
 @keyframes fadeInRight {
@@ -45,46 +63,72 @@
 }
 
 .step-number {
-  width: 3rem;
-  height: 3rem;
-  background: linear-gradient(135deg, var(--primary-color), #6a11cb);
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: bold;
-  font-size: 1.2rem;
-  box-shadow: 0 0 20px rgba(37, 117, 252, 0.3);
+  font-size: 1.4rem;
+  box-shadow: 0 0 25px rgba(37, 117, 252, 0.4);
   z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-step:hover .step-number {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px rgba(37, 117, 252, 0.6);
 }
 
 .glass-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  flex: 1;
-  max-width: 400px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 2.5rem;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .glass-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.glass-card:hover::after {
+  transform: rotate(45deg) translateX(100%);
 }
 
 .feature-icon {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 1.5rem;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid rgba(255, 255, 255, 0.1);
   transition: all 0.4s ease;
+  position: relative;
 }
 
 .feature-icon img {
@@ -95,17 +139,62 @@
 }
 
 .glass-card:hover .feature-icon {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
 .glass-card:hover .feature-icon img {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
 }
 
-h3 {
+.glass-card.locked {
+  opacity: 0.7;
+  filter: grayscale(0.5);
+}
+
+.glass-card.locked::after {
+  content: '🔒';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+}
+
+.subtitle-list {
+  margin-top: 1.5rem;
+  padding-left: 1.2rem;
+}
+
+.subtitle-item {
+  color: var(--text-color);
+  opacity: 0.8;
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  position: relative;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.subtitle-item::before {
+  content: '•';
+  position: absolute;
+  left: -1.2rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover .subtitle-item {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.glass-card:hover .subtitle-item::before {
+  transform: scale(1.2);
+}
+
+.features-section h3 {
   margin: 1rem 0;
   font-size: 1.8rem;
-  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
@@ -119,38 +208,39 @@ p {
 }
 
 @media (max-width: 768px) {
+  .timeline {
+    padding: 2rem 1rem;
+  }
+
   .timeline::before {
-    left: 2rem;
+    display: none;
   }
 
   .timeline-step {
-    flex-direction: row !important;
-    gap: 1rem;
+    width: 300px;
   }
 
   .step-number {
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1rem;
-    margin-left: 0.75rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.2rem;
   }
 
   .glass-card {
     padding: 1.5rem;
   }
 
+  .feature-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.5rem;
+  }
+
   h3 {
     font-size: 1.5rem;
   }
-}
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .subtitle-item {
+    font-size: 0.95rem;
   }
 }
