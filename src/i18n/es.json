@@ -1,0 +1,104 @@
+{
+  "cta": {
+    "title": "Comienza tu camino hacia una mejor postura hoy",
+    "description": "Únete a nuestro programa de acceso anticipado y sé de los primeros en experimentar el análisis de postura con IA.",
+    "button": "Obtener acceso anticipado"
+  },
+  "nav": {
+    "home": "Inicio",
+    "aiAnalysis": "Análisis IA",
+    "successStories": "Casos de Éxito",
+    "earlyAccess": "Acceso Anticipado"
+  },
+  "hero": {
+    "badge": "Health Tech - Impulsada por IA",
+    "title": "Previene el Dolor Lumbar. Siéntate Mejor con IFLEX.",
+    "description": "Análisis de postura impulsado por IA para ayudarte a sentarte mejor y trabajar más saludablemente.",
+    "getStarted": "Comenzar",
+    "learnMore": "Saber Más",
+    "indicators": {
+      "neck": "Alineación del Cuello",
+      "back": "Postura de la Espalda",
+      "shoulders": "Posición de Hombros"
+    },
+    "stats": {
+      "accuracy": "Tasa de Precisión",
+      "painReduction": "Reducción del Dolor"
+    },
+    "slider": {
+      "slide1": {
+        "title": "Análisis de Postura con IA",
+        "indicators": {
+          "neck": "Alineación del Cuello",
+          "back": "Postura de la Espalda",
+          "shoulders": "Posición de Hombros"
+        }
+      },
+      "slide2": {
+        "title": "Detección de Posición de Manos"
+      }
+    }
+  },
+  "problem": {
+    "title": "La causa oculta del dolor de espalda: mala postura",
+    "description": "El 80% de los trabajadores de oficina experimentan dolor de espalda debido a la postura prolongada y mala. IFLEX está aquí para ayudar.",
+    "stats": {
+      "officeWorkers": {
+        "value": "80%",
+        "label": "Trabajadores de Oficina Afectados",
+        "detail": "Experimentan dolor de espalda por mala postura"
+      },
+      "dailyAverage": {
+        "value": "7.5",
+        "label": "Horas Sentado al Día",
+        "detail": "Tiempo promedio sentado en el trabajo"
+      },
+      "productivityLoss": {
+        "value": "60%",
+        "label": "Impacto en Productividad",
+        "detail": "Reportan disminución de productividad por incomodidad"
+      }
+    },
+    "commonIssues": {
+      "title": "Problemas y Soluciones Comunes",
+      "items": {
+        "spineAlignment": {
+          "title": "Alineación de la Columna",
+          "description": "La mala alineación aumenta la presión en tu columna vertebral"
+        },
+        "sittingPosition": {
+          "title": "Posición al Sentarse",
+          "description": "La posición incorrecta al sentarse afecta la circulación sanguínea"
+        },
+        "duration": {
+          "title": "Duración",
+          "description": "Períodos prolongados sentado sin descansos tensionan los músculos"
+        }
+      }
+    }
+  },
+  "solution": {
+    "title": "Cómo funciona IFLEX",
+    "description": "Toma una foto, obtén un análisis y recibe recomendaciones personalizadas para mejorar tu postura."
+  },
+  "features": {
+    "title": "Características principales",
+    "aiAnalysis": {
+      "title": "Análisis impulsado por IA",
+      "description": "Nuestros algoritmos avanzados evalúan tu postura con precisión."
+    },
+    "recommendations": {
+      "title": "Recomendaciones personalizadas",
+      "description": "Recibe consejos adaptados para mejorar tus hábitos al sentarse."
+    },
+    "feedback": {
+      "title": "Retroalimentación en tiempo real",
+      "description": "Consejos instantáneos para ajustar tu postura mientras trabajas."
+    }
+  },
+  "footer": {
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "contact": "Contáctanos"
+  }
+}

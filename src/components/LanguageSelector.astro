@@ -1,0 +1,66 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<div class="language-selector">
+  <svg class="globe-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+  </svg>
+  <button class="lang-btn" data-lang="es" aria-label="Switch to Spanish">ES</button>
+  <button class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+</div>
+
+<style>
+  .language-selector {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--bg-color);
+    padding: 0.25rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+  }
+
+  .lang-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 15px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .lang-btn[data-lang="${lang}"] {
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+
+  .lang-btn:hover {
+    background-color: var(--hover-color);
+  }
+
+  .globe-icon {
+    color: var(--text-color);
+  }
+</style>
+
+<script>
+  import { setLanguage } from '../stores/languageStore';
+
+  const langButtons = document.querySelectorAll('.lang-btn');
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const lang = (e.target as HTMLElement).dataset.lang;
+      if (lang) {
+        setLanguage(lang);
+        window.location.reload();
+      }
+    });
+  });
+</script>

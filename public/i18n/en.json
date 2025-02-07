@@ -1,0 +1,12 @@
+{
+  "hero": {
+    "badge": "AI-Powered Posture Analysis",
+    "title": "Transform Your Posture with AI Technology",
+    "description": "Experience real-time posture analysis and personalized recommendations using advanced AI technology. Improve your posture, prevent pain, and enhance your overall well-being.",
+    "indicators": {
+      "neck": "Neck Alignment",
+      "back": "Back Posture",
+      "shoulders": "Shoulder Balance"
+    }
+  }
+}

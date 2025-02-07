@@ -1,0 +1,34 @@
+---
+/**
+ * CommonIssues Component
+ * Displays common posture-related health issues and their solutions
+ * Uses consistent styling and animations for better user engagement
+ */
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="problem-solutions">
+  <h3 class="solutions-title">{t('problem.commonIssues.title')}</h3>
+  <div class="solutions-grid">
+    <div class="solution-item animate-in">
+      <div class="icon">🦴</div>
+      <h4>{t('problem.commonIssues.items.spineAlignment.title')}</h4>
+      <p>{t('problem.commonIssues.items.spineAlignment.description')}</p>
+    </div>
+    <div class="solution-item animate-in">
+      <div class="icon">💺</div>
+      <h4>{t('problem.commonIssues.items.sittingPosition.title')}</h4>
+      <p>{t('problem.commonIssues.items.sittingPosition.description')}</p>
+    </div>
+    <div class="solution-item animate-in">
+      <div class="icon">⏰</div>
+      <h4>{t('problem.commonIssues.items.duration.title')}</h4>
+      <p>{t('problem.commonIssues.items.duration.description')}</p>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/styles/components/common-issues.css" />

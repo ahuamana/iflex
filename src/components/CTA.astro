@@ -1,0 +1,23 @@
+---
+/**
+ * CTA Component
+ * Call-to-Action section for early access signup
+ * Uses consistent styling and animations for engaging user interaction
+ */
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="animate-in">{t('cta.title')}</h2>
+      <p class="animate-in">{t('cta.description')}</p>
+      <a href="#signup" class="btn-primary animate-in pulse">{t('cta.button')}</a>
+    </div>
+  </div>
+</section>
+
+<link rel="stylesheet" href="../styles/components/cta.css" />

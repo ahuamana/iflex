@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "home": "Home",
+    "aiAnalysis": "AI Analysis",
+    "successStories": "Success Stories",
+    "earlyAccess": "Early Access"
+  },
+  "cta": {
+    "title": "Start Your Journey to Better Posture Today",
+    "description": "Join our early access program and be among the first to experience AI-powered posture analysis.",
+    "button": "Get Early Access"
+  },
+  "hero": {
+    "badge": "AI-Powered Health Solution",
+    "title": "Transform Your Posture with Real-Time AI Analysis",
+    "description": "Say goodbye to back pain and poor sitting habits. Our advanced AI technology monitors your posture in real-time, providing instant feedback and personalized recommendations for a healthier lifestyle.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "indicators": {
+      "neck": "Neck Alignment",
+      "back": "Back Posture",
+      "shoulders": "Shoulder Position"
+    },
+    "stats": {
+      "accuracy": "Accuracy Rate",
+      "painReduction": "Pain Reduction"
+    },
+    "slider": {
+      "slide1": {
+        "title": "AI Posture Analysis",
+        "indicators": {
+          "neck": "Neck Alignment",
+          "back": "Back Posture",
+          "shoulders": "Shoulder Position"
+        }
+      },
+      "slide2": {
+        "title": "Hand Position Detection"
+      }
+    }
+  },
+  "problem": {
+    "title": "The Hidden Cause of Back Pain: Poor Posture",
+    "description": "80% of office workers experience back pain due to prolonged sitting and bad posture. IFLEX is here to help.",
+    "stats": {
+      "officeWorkers": {
+        "value": "80%",
+        "label": "Office Workers Affected",
+        "detail": "Experience back pain due to poor posture"
+      },
+      "dailyAverage": {
+        "value": "7.5",
+        "label": "Hours Sitting Daily",
+        "detail": "Average time spent sitting at work"
+      },
+      "productivityLoss": {
+        "value": "60%",
+        "label": "Productivity Impact",
+        "detail": "Report decreased productivity due to discomfort"
+      }
+    },
+    "commonIssues": {
+      "title": "Common Issues & Solutions",
+      "items": {
+        "spineAlignment": {
+          "title": "Spine Alignment",
+          "description": "Poor alignment leads to increased pressure on your spine"
+        },
+        "sittingPosition": {
+          "title": "Sitting Position",
+          "description": "Incorrect sitting position affects blood circulation"
+        },
+        "duration": {
+          "title": "Duration",
+          "description": "Extended sitting periods without breaks strain muscles"
+        }
+      }
+    }
+  },
+  "solution": {
+    "title": "How IFLEX Works",
+    "description": "Take a photo, get analyzed, and receive personalized recommendations to improve your posture."
+  },
+  "features": {
+    "title": "Key Features",
+    "aiAnalysis": {
+      "title": "AI-Powered Analysis",
+      "description": "Our advanced algorithms assess your posture accurately."
+    },
+    "recommendations": {
+      "title": "Personalized Recommendations",
+      "description": "Get tailored advice to improve your sitting habits."
+    },
+    "feedback": {
+      "title": "Real-Time Feedback",
+      "description": "Instant tips to adjust your posture while working."
+    }
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact Us"
+  }
+}

@@ -1,0 +1,42 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<div class="hero-slider">
+  <div class="slider-container">
+    <div class="slider-track">
+      <div class="slide glass-effect">
+        <div class="slide-title">
+          {t('hero.slider.slide1.title')}
+        </div>
+        <img src="https://github.com/CMU-Perceptual-Computing-Lab/openpose/raw/master/.github/media/pose_face.gif" alt="AI Posture Analysis Demo" class="analysis-image" />
+        <div class="ai-indicators">
+          <div class="indicator neck">{t('hero.slider.slide1.indicators.neck')}</div>
+          <div class="indicator back">{t('hero.slider.slide1.indicators.back')}</div>
+          <div class="indicator shoulders">{t('hero.slider.slide1.indicators.shoulders')}</div>
+        </div>
+      </div>
+      <div class="slide glass-effect">
+        <div class="slide-title">
+          {t('hero.slider.slide2.title')}
+        </div>
+        <img src="https://github.com/CMU-Perceptual-Computing-Lab/openpose/raw/master/.github/media/pose_hands.gif" alt="Hand Pose Detection" class="analysis-image" />
+      </div>
+    
+    </div>
+    
+    <button class="slider-nav prev" aria-label="Previous slide">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button class="slider-nav next" aria-label="Next slide">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+    
+    <div class="slider-dots"></div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="../styles/components/hero-slider.css" />
+<script src="../scripts/heroSlider.js"></script>

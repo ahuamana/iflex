@@ -1,0 +1,91 @@
+:root {
+  --primary-color: #34d399;
+  --secondary-color: #059669;
+  --gradient-start: #34d399;
+  --gradient-end: #059669;
+  --text-color: #2C3E50;
+  --bg-color: #F5F9F8;
+  --container-width: 1200px;
+  --card-bg: #FFFFFF;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --primary-color: #10b981;
+  --secondary-color: #047857;
+  --gradient-start: #10b981;
+  --gradient-end: #047857;
+  --text-color: #E0E0E0;
+  --bg-color: #121212;
+  --card-bg: #1E1E1E;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.animate-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}

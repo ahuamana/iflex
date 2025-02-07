@@ -1,58 +1,39 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import ImageModal from './ImageModal.astro';
+import HeroSlider from './HeroSlider.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <div class="hero">
-  <div class="container">
-    <h1>Prevent Lumbar Pain. Sit Smarter with IFLEX.</h1>
-    <p>AI-powered posture analysis to help you sit better and work healthier.</p>
-    <a href="#signup" class="btn-primary">Get Started</a>
-    <a href="#features" class="btn-secondary">Learn More</a>
+  <ImageModal id="imageModal" />
+  <div class="hero-overlay"></div>
+  <div class="container split-layout">
+    <div class="hero-images animate-in">
+      <HeroSlider />
+    </div>
+    <div class="hero-content">
+      <span class="hero-badge animate-in">{t('hero.badge')}</span>
+      <h1 class="animate-in">{t('hero.title')}</h1>
+      <p class="animate-in">{t('hero.description')}</p>
+      <div class="hero-stats animate-in">
+        <div class="stat">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">{t('hero.stats.accuracy')}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">-60%</span>
+          <span class="stat-label">{t('hero.stats.painReduction')}</span>
+        </div>
+      </div>
+      <div class="button-group animate-in">
+        <a href="#signup" class="btn-primary">{t('hero.getStarted')}</a>
+        <a href="#features" class="btn-secondary">{t('hero.learnMore')}</a>
+      </div>
+    </div>
   </div>
 </div>
 
-<style>
-  .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: var(--text-color);
-  }
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    color: white;
-  }
-  .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: white;
-  }
-  .btn-primary {
-    background-color: #fff;
-    color: #6a11cb;
-    padding: 15px 30px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    margin-right: 10px;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  .btn-secondary {
-    background-color: transparent;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 1rem;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-    .hero p {
-      font-size: 1rem;
-    }
-  }
-</style>
+<link rel="stylesheet" href="/styles/components/hero.css" />

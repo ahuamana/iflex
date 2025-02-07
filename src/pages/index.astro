@@ -4,6 +4,8 @@ import Hero from '../components/Hero.astro';
 import Problem from '../components/Problem.astro';
 import Solution from '../components/Solution.astro';
 import Features from '../components/Features.astro';
+import Header from '../components/Header.astro';
+import CTA from '../components/CTA.astro';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -17,118 +19,28 @@ import Features from '../components/Features.astro';
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://images.unsplash.com">
   <title>IFLEX - Prevent Lumbar Pain with AI-Powered Posture Analysis</title>
-  <style>
-    :root {
-      --bg-color: #f9f9f9;
-      --text-color: #333;
-      --footer-bg: #333;
-      --footer-text: #fff;
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #1a1a1a;
-      --text-color: #f9f9f9;
-      --footer-bg: #2a2a2a;
-      --footer-text: #f9f9f9;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text-color);
-      background-color: var(--bg-color);
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      color: var(--text-color);
-      font-size: 24px;
-    }
-
-    .cta {
-      background: linear-gradient(135deg, #2575fc, #6a11cb);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .footer {
-      background: var(--footer-bg);
-      color: var(--footer-text);
-      text-align: center;
-      padding: 20px;
-    }
-
-    .footer a {
-      color: var(--footer-text);
-      margin: 0 10px;
-      text-decoration: none;
-    }
-  </style>
-  <script>
-    // Theme toggle functionality
-    document.addEventListener('DOMContentLoaded', () => {
-      const theme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', theme);
-
-      const toggleTheme = () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-      };
-
-      const themeToggleButton = document.querySelector('.theme-toggle');
-      if (themeToggleButton) {
-        themeToggleButton.addEventListener('click', toggleTheme);
-      }
-    });
-  </script>
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/components/cta.css">
+  <link rel="stylesheet" href="../styles/components/footer.css">
+  <script src="../scripts/themeToggle.js"></script>
 </head>
 <body>
-  <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
+  <Header />
   <Hero />
   <Problem />
   <Solution />
   <Features />
+  <CTA />
 
-  <section class="cta">
-    <div class="container">
-      <h2>Start Your Journey to Better Posture Today</h2>
-      <a href="#signup" class="btn-primary">Sign Up Now</a>
-    </div>
-  </section>
 
   <footer class="footer">
     <div class="container">
-      <a href="#privacy">Privacy Policy</a>
-      <a href="#terms">Terms of Service</a>
-      <a href="#contact">Contact Us</a>
+      <div class="footer-links animate-in">
+        <a href="#privacy" class="footer-link">Privacy Policy</a>
+        <a href="#terms" class="footer-link">Terms of Service</a>
+        <a href="#contact" class="footer-link">Contact Us</a>
+      </div>
     </div>
   </footer>
 </body>

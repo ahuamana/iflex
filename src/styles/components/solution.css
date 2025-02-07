@@ -1,0 +1,21 @@
+.section-image {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 12px var(--shadow-color);
+}
+
+@media (max-width: 768px) {
+  .section-image {
+    max-width: 100%;
+    margin: 15px auto;
+  }
+}

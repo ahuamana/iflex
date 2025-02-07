@@ -1,0 +1,20 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-links animate-in">
+      <a href="#privacy" class="footer-link">{t('footer.privacy')}</a>
+      <a href="#terms" class="footer-link">{t('footer.terms')}</a>
+      <a href="#contact" class="footer-link">{t('footer.contact')}</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @import '../styles/components/footer.css';
+</style>

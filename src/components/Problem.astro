@@ -1,28 +1,110 @@
 ---
+/**
+ * Problem Component
+ * Displays a section highlighting the health issues related to poor posture
+ * Uses multilingual support and responsive image handling
+ */
 import Section from './Section.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import CommonIssues from './CommonIssues.astro';
+import ImageComparison from './ImageComparison.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Section
-  title="The Hidden Cause of Back Pain: Poor Posture"
-  description="80% of office workers experience back pain due to prolonged sitting and bad posture. IFLEX is here to help."
+  title={t('problem.title')}
+  description={t('problem.description')}
   id="problem"
 >
-  <img 
-    src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&q=80&w=1200" 
-    alt="Person with back pain" 
-    class="section-image" 
-    loading="lazy"
-    onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x800?text=Back+Pain+Image'"
-  >
+  <div class="problem-content">
+    <div class="problem-stats">
+      <div class="stat-card animate-in">
+        <h3 class="stat-number">{t('problem.stats.officeWorkers.value')}</h3>
+        <p>{t('problem.stats.officeWorkers.label')}</p>
+        <span class="stat-detail">{t('problem.stats.officeWorkers.detail')}</span>
+        <div class="progress-bar" data-value="80"></div>
+      </div>
+      <div class="stat-card animate-in">
+        <h3 class="stat-number">{t('problem.stats.dailyAverage.value')}</h3>
+        <p>{t('problem.stats.dailyAverage.label')}</p>
+        <span class="stat-detail">{t('problem.stats.dailyAverage.detail')}</span>
+        <div class="progress-bar" data-value="70"></div>
+      </div>
+      <div class="stat-card animate-in">
+        <h3 class="stat-number">{t('problem.stats.productivityLoss.value')}</h3>
+        <p>{t('problem.stats.productivityLoss.label')}</p>
+        <span class="stat-detail">{t('problem.stats.productivityLoss.detail')}</span>
+        <div class="progress-bar" data-value="60"></div>
+      </div>
+    </div>
+
+    <ImageComparison />
+
+    <CommonIssues />
+  </div>
 </Section>
 
-<style>
-  .section-image {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    display: block;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+<script>
+  // Add intersection observer for animation
+  const animatedElements = document.querySelectorAll<HTMLElement>('.animate-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        if (entry.target.classList.contains('stat-card')) {
+          animateNumber(entry.target as HTMLElement);
+          const progressBar = entry.target.querySelector<HTMLElement>('.progress-bar');
+          if (progressBar) {
+            animateProgressBar(progressBar);
+          }
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+
+  animatedElements.forEach(element => observer.observe(element));
+
+  function animateNumber(card: HTMLElement) {
+    const numberElement = card.querySelector<HTMLElement>('.stat-number');
+    if (!numberElement || !numberElement.textContent) return;
+
+    const text = numberElement.textContent.trim();
+    const hasPercentage = text.includes('%');
+    const finalValue = parseFloat(text.replace('%', ''));
+    if (isNaN(finalValue)) return;
+
+    let startValue = 0;
+    const duration = 2000;
+    const startTime = performance.now();
+
+    function updateNumber(currentTime: number) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      const currentValue = startValue + (finalValue - startValue) * easeOutQuart(progress);
+      if (numberElement) numberElement.textContent = hasPercentage ?
+        `${Math.round(currentValue)}%` : 
+        currentValue.toFixed(1);
+
+      if (progress < 1) {
+        requestAnimationFrame(updateNumber);
+      }
+    }
+
+    requestAnimationFrame(updateNumber);
   }
-</style>
+
+  function animateProgressBar(progressBar: HTMLElement) {
+    const value = progressBar.getAttribute('data-value');
+    if (value) {
+      progressBar.style.setProperty('--progress', `${value}%`);
+    }
+  }
+
+  function easeOutQuart(x: number): number {
+    return 1 - Math.pow(1 - x, 4);
+  }
+</script>
+<link rel="stylesheet" href="/styles/components/problem.css" />
