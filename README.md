@@ -1,7 +1,7 @@
 # IFLEX - Intelligent Fitness Learning Experience
 
-<div style="text-align: center; width: 100%;">
-  <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWhkaTBhd2U4bjN0aWF5MzQxeXlkajFkeHptbXZ1OWNnY3h6OXB5YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/87aSknz7zSmQCl7Xhy/giphy.gif" alt="IFLEX Demo" style="width: 100%; max-width: 1200px; min-height: 900px; object-fit: cover;">
+<div align="center">
+  <img src="https://media.giphy.com/media/87aSknz7zSmQCl7Xhy/giphy.gif" alt="IFLEX Demo" style="width: 100%; max-width: 1200px; min-height: 900px; object-fit: cover;">
 </div>
 
 IFLEX is a modern web application built with Astro that provides personalized fitness learning experiences through AI-powered analysis and recommendations.
