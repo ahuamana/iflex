@@ -1,9 +1,9 @@
 ---
 /**
  * Features Component
- * Displays the key features of the IFLEX application
+ * Displays a timeline of how IFLEX works with step-by-step visualization
  * Includes AI analysis, personalized recommendations, and real-time feedback sections
- * Uses responsive design and hover effects for better user interaction
+ * Uses modern design with glass-morphism effects and smooth animations
  */
 import Section from './Section.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
@@ -16,129 +16,55 @@ const t = useTranslations(lang);
   title={t('features.title')}
   id="features"
 >
-  <div class="features">
-    <div class="feature">
-      <div class="feature-icon">
-        <img 
-          src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=200" 
-          alt={t('features.aiAnalysis.title')} 
-          loading="lazy"
-          onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200?text=AI+Analysis'"
-        />
+  <div class="timeline">
+    <div class="timeline-step">
+      <div class="step-number">1</div>
+      <div class="feature glass-card">
+        <div class="feature-icon">
+          <img 
+            src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=200" 
+            alt={t('features.aiAnalysis.title')} 
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200?text=AI+Analysis'"
+          />
+        </div>
+        <h3>{t('features.aiAnalysis.title')}</h3>
+        <p>{t('features.aiAnalysis.description')}</p>
       </div>
-      <h3>{t('features.aiAnalysis.title')}</h3>
-      <p>{t('features.aiAnalysis.description')}</p>
     </div>
-    <div class="feature">
-      <div class="feature-icon">
-        <img 
-          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=200" 
-          alt={t('features.recommendations.title')} 
-          loading="lazy"
-          onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200?text=Recommendations'"
-        />
+
+    <div class="timeline-step">
+      <div class="step-number">2</div>
+      <div class="feature glass-card">
+        <div class="feature-icon">
+          <img 
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=200" 
+            alt={t('features.recommendations.title')} 
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200?text=Recommendations'"
+          />
+        </div>
+        <h3>{t('features.recommendations.title')}</h3>
+        <p>{t('features.recommendations.description')}</p>
       </div>
-      <h3>{t('features.recommendations.title')}</h3>
-      <p>{t('features.recommendations.description')}</p>
     </div>
-    <div class="feature">
-      <div class="feature-icon">
-        <img 
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=200" 
-          alt={t('features.feedback.title')} 
-          loading="lazy"
-          onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200?text=Feedback'"
-        />
+
+    <div class="timeline-step">
+      <div class="step-number">3</div>
+      <div class="feature glass-card">
+        <div class="feature-icon">
+          <img 
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=200" 
+            alt={t('features.feedback.title')} 
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200?text=Feedback'"
+          />
+        </div>
+        <h3>{t('features.feedback.title')}</h3>
+        <p>{t('features.feedback.description')}</p>
       </div>
-      <h3>{t('features.feedback.title')}</h3>
-      <p>{t('features.feedback.description')}</p>
     </div>
   </div>
 </Section>
 
-<link rel="stylesheet" href="/styles/components/features.css" />
-
-<style>
-  /* Features grid layout */
-  .features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 20px;
-  }
-
-  /* Individual feature card styling */
-  .feature {
-    background: var(--bg-color);
-    padding: 30px;
-    border-radius: 16px;
-    width: 300px;
-    box-shadow: 0 4px 20px var(--shadow-color);
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  /* Feature card hover effects */
-  .feature:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px var(--shadow-color);
-  }
-
-  /* Gradient line animation on hover */
-  .feature::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .feature:hover::before {
-    opacity: 1;
-  }
-
-  /* Feature icon styling */
-  .feature-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 4px 10px var(--shadow-color);
-  }
-
-  .feature-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-
-  .feature:hover .feature-icon img {
-    transform: scale(1.1);
-  }
-
-  /* Typography styles */
-  .feature h3 {
-    margin: 15px 0;
-    font-size: 1.5rem;
-    color: var(--text-color);
-    font-weight: 600;
-  }
-
-  .feature p {
-    font-size: 1rem;
-    color: var(--text-color);
-    opacity: 0.9;
-    line-height: 1.6;
-  }
-</style>
+<link rel="stylesheet" href="../styles/components/features.css" />

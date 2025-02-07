@@ -1,21 +1,196 @@
-.section-image {
-  width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px var(--shadow-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.solution-timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-.section-image:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 12px var(--shadow-color);
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-step {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.timeline-step.animate-in {
+  animation: fadeSlideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-play-state: paused;
+}
+
+.timeline-step.animate-in.visible {
+  animation-play-state: running;
+}
+
+.timeline-step.left .step-content {
+  margin-right: auto;
+  margin-left: 0;
+  transform: translateX(-100px);
+}
+
+.timeline-step.right .step-content {
+  margin-left: auto;
+  margin-right: 0;
+  transform: translateX(100px);
+}
+
+.step-content {
+  width: 100%;
+  max-width: 500px;
+  opacity: 0;
+}
+
+.timeline-step.animate-in .step-content {
+  animation: slideIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+  animation-play-state: paused;
+}
+
+.timeline-step.animate-in.visible .step-content {
+  animation-play-state: running;
+}
+
+.solution-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.solution-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+.solution-card:hover::before {
+  opacity: 1;
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.solution-card:hover .step-number {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.solution-icon {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.solution-icon img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.solution-card:hover .solution-icon img {
+  transform: scale(1.08);
+}
+
+.solution-card h3 {
+  margin: 1rem 0;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.solution-card:hover h3 {
+  transform: translateX(5px);
+}
+
+.solution-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
 }
 
 @media (max-width: 768px) {
-  .section-image {
-    max-width: 100%;
-    margin: 15px auto;
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-step {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 40px;
+  }
+
+  .timeline-step.left .step-content,
+  .timeline-step.right .step-content {
+    margin: 0;
+    max-width: calc(100% - 40px);
+  }
+
+  .step-number {
+    left: -20px;
+    transform: none;
   }
 }

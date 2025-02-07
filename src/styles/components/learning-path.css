@@ -1,0 +1,142 @@
+.learning-path-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--primary-color), #6a11cb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+  opacity: 0.8;
+}
+
+.modules-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.module {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.module:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.module-header {
+  background: linear-gradient(135deg, var(--primary-color), #6a11cb);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.module-number {
+  background: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+}
+
+.module-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.module-content {
+  padding: 2rem;
+}
+
+.lesson {
+  margin-bottom: 2rem;
+}
+
+.lesson:last-child {
+  margin-bottom: 0;
+}
+
+.lesson h4 {
+  color: var(--text-color);
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
+
+.lesson ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lesson li {
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.lesson li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .module-header {
+    padding: 1rem;
+  }
+
+  .module-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .module-content {
+    padding: 1.5rem;
+  }
+
+  .lesson h4 {
+    font-size: 1.1rem;
+  }
+}
