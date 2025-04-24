@@ -1,5 +1,8 @@
 # IFLEX - Intelligent Fitness Learning Experience
 
+## Website
+https://1flex.netlify.app/
+
 <div align="center" style="width: 100%; max-width: 800px; margin: 0 auto;">
   <img src="https://media.giphy.com/media/87aSknz7zSmQCl7Xhy/giphy.gif" alt="IFLEX Demo" style="width: 100%; height: auto; max-height: 600px; object-fit: contain;">
 </div>
